@@ -277,7 +277,7 @@ hr{
     transform: translate(50%) rotate(45deg);
 }
 
-#projects img{
+#projects figure img{
     max-width: 100%;
     height: 70%;
     border-radius: 18px 18px 0 0;
@@ -314,6 +314,111 @@ hr{
     background-color: rgb(43, 182, 8);
 }
 
+.modal-container{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modall{
+    width: 55%;
+    height: 80%;
+    position: relative;
+    background-color: #F1FAEE;
+    border-radius: 10px;
+    transform: translate(0%, 0%) scale(1);
+    transition: 0.4s transform;
+}
+
+.modal-close{
+    transform: translate(0%, 0%) scale(0);
+}
+
+.close{
+    display: inline-block;
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    width: 30px;
+    height: 30px;
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 150%);
+    text-align: center;
+    color: #fff;
+    padding-top: 3px;
+    font-weight: 900;
+    cursor: pointer;
+    border-radius: 20px;
+    z-index: 1000;
+}
+
+.modall img{
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.modal-text{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal-title{
+    width: 100%;
+    font-size: 35px;
+    height: 100px;
+    padding-top: 40px;
+    text-align: center;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 10%);
+    color: white;
+    position: absolute;
+    top: 0px;
+    font-weight: 900;
+    border-top-right-radius: 10px;
+}
+
+.modal-description{
+    padding: 0 10px;
+    font-size: 22px;
+    position: absolute;
+    top: 140px;
+    text-align: center;
+}
+
+.modal-tools{
+    width: 100%;
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-tools div{
+    font-size: 1.1vw;
+    text-align: center;
+    width: 20%;
+    background-color: #330867;
+    margin: 0 5px;
+    padding: 3px;
+    color: white;
+    font-weight: 900;
+    border-radius: 4px;
+} 
+
 #contact{
     background-color: #A8DADC;
     font-size: 22px;
@@ -349,7 +454,7 @@ footer a:hover{
 
 @media screen and (max-width: 1100px){
     .navb{
-       position: relative;
+        position: relative;
         width: 100%;
         top: 0;
         right: 0;
