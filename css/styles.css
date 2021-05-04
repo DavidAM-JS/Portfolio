@@ -66,12 +66,18 @@ header h3{
 .navb{
     position: fixed;
     width: 110px;
-    background-color: #c91423;
+    background-image: linear-gradient(to top, #ad0a33 0%, #d83e10 100%);
     right: 5%;
     top: 270px;
     border-radius: 10px;
     justify-content: center;
     padding: 0;
+}
+
+.navb.sticky{
+    position: fixed;
+    z-index: 1000;
+    transition: 1s;
 }
 
 .navb-links ul{
@@ -225,32 +231,25 @@ hr{
 .skills_progress-bar{
     background-color: black;
     display: inline-block;
-    height: 17px;
+    height: 15px;
     width: 50%;
     margin-left: 10px;
     border: 1px solid rgba(0, 0, 0, 3);
-    border-radius: 3px;
+    border-radius: 20px;
     box-shadow: 0 0 10px #2187e7b3;
-
+    backdrop-filter: blur(10px);
 }
 
 .skills_progress-percent{
     position: relative;
     display: inline-block;
-    height: 100%;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
-    transition: width .4s ease-in-out;
-    background-color: #0d68be;
+    height: 12px;
+    border-radius: 10px;
+    border: 1px solid #1c97fc;
+    box-shadow: 0 0 5px rgba(28, 151, 252, .6);
+    background-color: #badefc;
     background-size: 30px 30px;
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%,
-    transparent 50%, transparent 50%, rgba(255, 255, 255, .25) 50%, rgba(255, 255,
-    255, .15) 75%, transparent 75%, transparent);
-    animation: animate-stripes 3s linear infinite;
-}
-
-@keyframes animate-stripes{
-    0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+    margin-bottom: 2px;
 }
 
 .skills_progress-percent::before{
@@ -331,7 +330,7 @@ hr{
 
 .modall{
     width: 55%;
-    height: 80%;
+    height: 620px;
     position: relative;
     background-color: #F1FAEE;
     border-radius: 10px;
@@ -360,11 +359,12 @@ hr{
     z-index: 1000;
 }
 
-.modall img{
+.modal-img{
     width: 40%;
     height: 100%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    position: fixed;
 }
 
 .modal-text{
@@ -393,7 +393,7 @@ hr{
 
 .modal-description{
     padding: 0 10px;
-    font-size: 22px;
+    font-size: 21px;
     position: absolute;
     top: 140px;
     text-align: center;
@@ -508,6 +508,21 @@ footer a:hover{
     #projects button{
         font-size: 1vw;
     }
+    
+    .modall{
+        width: 75%;
+    }
+    
+}
+
+@media screen and (max-width: 850px) {
+    .modall{
+        height: 500px;
+    }
+
+    .modal-description{
+        font-size: 17px;
+    }
 }
 
 @media screen and (max-width: 767px){
@@ -576,6 +591,30 @@ footer a:hover{
     #projects button{
         font-size: 2vw;
     }
+    
+    .modall{
+        width: 85%;
+        height: 520px;
+    }
+
+    .modal-img{
+        width: 45%;
+    }
+
+    .modal-text{
+        width: 55%;
+    }
+    .modal-title{
+        font-size: 28px;
+    }
+    
+    .modal-description{
+        font-size: 15px;
+    }
+
+    .modal-tools div{
+        font-size: 1.7vw;
+    } 
 
     #contact{
         font-size: 18px;
@@ -614,4 +653,28 @@ footer a:hover{
     #projects button{
         font-size: 9px;
     }
+
+    .modall{
+        width: 95%;
+        height: 370px;
+    }
+
+    .modal-img{
+        width: 40%;
+    }
+
+    .modal-text{
+        width: 60%;
+    }
+    .modal-title{
+        font-size: 22px;
+    }
+    
+    .modal-description{
+        font-size: 10px;
+    }
+
+    .modal-tools div{
+        font-size: 2vw;
+    } 
 }
