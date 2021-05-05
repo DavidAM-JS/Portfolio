@@ -97,7 +97,7 @@ openModal.forEach((element) => {
                 tools = ["HTML", "CSS", "JAVASCRIPT"];
                 modalImg.setAttribute('src', 'images/proyects/realTimeClock2.png');
                 modalTitle.innerText = "Digital Clock";
-                modalDescription.innerHTML = ``;
+                modalDescription.innerHTML = `A real time analog and digital clock`;
                 modalTools.forEach((tool) => {
                     tool.innerText = tools[counter];
                     tool.style.width = "26%"
@@ -112,7 +112,7 @@ openModal.forEach((element) => {
                 tools = ["PYTHON", "ELECTRONIC", "PSOC"];
                 modalImg.setAttribute('src', 'images/proyects/banda2.jpeg');
                 modalTitle.innerText = "Sorting System";
-                modalDescription.innerHTML = `A prototype of a sorting system that implements computer vision to clasificate the products by
+                modalDescription.innerHTML = `A prototype of a sorting system that implements computer vision to classify the products by
                 reading the QR codes attach to them. <br/><br/> The camera detect the QR code and proceed to read it, and if the code is correct, the 
                 python program sends the signals to the microcontroller to start the operation`;
                 modalTools.forEach((tool) => {
