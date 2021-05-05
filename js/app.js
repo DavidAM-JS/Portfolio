@@ -92,6 +92,38 @@ openModal.forEach((element) => {
                 modalC.style.visibility = "visible";
                 modal.classList.toggle("modal-close");
                 break;
+
+            case 'clockbtn':
+                tools = ["HTML", "CSS", "JAVASCRIPT"];
+                modalImg.setAttribute('src', 'images/proyects/realTimeClock2.png');
+                modalTitle.innerText = "Digital Clock";
+                modalDescription.innerHTML = ``;
+                modalTools.forEach((tool) => {
+                    tool.innerText = tools[counter];
+                    tool.style.width = "26%"
+                    counter++;
+                });
+                modalC.style.opacity = "1";
+                modalC.style.visibility = "visible";
+                modal.classList.toggle("modal-close");
+                break;
+
+            case 'bandabtn':
+                tools = ["PYTHON", "ELECTRONIC", "PSOC"];
+                modalImg.setAttribute('src', 'images/proyects/banda2.jpeg');
+                modalTitle.innerText = "Sorting System";
+                modalDescription.innerHTML = `A prototype of a sorting system that implements computer vision to clasificate the products by
+                reading the QR codes attach to them. <br/><br/> The camera detect the QR code and proceed to read it, and if the code is correct, the 
+                python program sends the signals to the microcontroller to start the operation`;
+                modalTools.forEach((tool) => {
+                    tool.innerText = tools[counter];
+                    tool.style.width = "26%"
+                    counter++;
+                });
+                modalC.style.opacity = "1";
+                modalC.style.visibility = "visible";
+                modal.classList.toggle("modal-close");
+                break;
         }
     });
 })
@@ -114,7 +146,7 @@ window.addEventListener("click", function (e) {
     }
 });
 
-window.addEventListener("scroll", function(e){
+window.addEventListener("scroll", function (e) {
     navbar.classList.toggle("sticky", window.scrollY > 250);
 });
 
