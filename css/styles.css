@@ -161,7 +161,7 @@ hr{
     letter-spacing: .1rem;
 }
 
-#section__professional-picture{height: 260px; width: 300px; border-radius: 20%;}
+#section__professional-picture{height: 260px; width: 300px; border-radius: 20%; margin: auto 0;}
 
 #skills{background-color: #A8DADC;}
 #skills__container{
@@ -392,7 +392,6 @@ footer a:hover{color: chartreuse;}
     .header__nav{
         height: 60px;
         width: 100%;
-        display: block;
         right: 0;
     }
 
