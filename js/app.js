@@ -9,6 +9,7 @@ let modalTitle = document.getElementsByClassName("modal-title")[0];
 let modalDescription = document.getElementsByClassName("modal-description")[0];
 let modalTools = document.querySelectorAll(".tool");
 let navbar = document.querySelector(".navb");
+let navButton = document.querySelector(".header__nav");
 
 toogleButton.addEventListener('click', () => {
     navBarLinks.classList.toggle('active');
@@ -18,8 +19,18 @@ const progressBars = document.getElementsByClassName("skills_progress-percent")
 
 for (let i = 0; i < progressBars.length; i++) {
     const skillpercent = progressBars.item(i);
-    console.log(skillpercent);
-    skillpercent.style.width = skillpercent.getAttribute('percent') + '%';
+    const percent = skillpercent.getAttribute('percent');
+    let percentNum = parseInt(percent);
+    skillpercent.style.width = percent + '%';
+    if (percentNum < 50) {
+        skillpercent.style.backgroundImage = 'linear-gradient(to right, #b5dbec 0%, #1826a0 300%)';
+    }
+    else if (percentNum >= 50 && percentNum < 75) {
+        skillpercent.style.backgroundImage = 'linear-gradient(to right, #b5dbec 0%, #1826a0 150%)';
+    }
+    else if (percentNum >= 75 && percentNum <= 100)
+        skillpercent.style.backgroundImage = 'linear-gradient(to right, #b5dbec 0%, #1826a0 80%)';
+
 }
 
 openModal.forEach((element) => {
@@ -31,9 +42,10 @@ openModal.forEach((element) => {
                 tools = ["JAVA", "ANDROID", "MYSQL"];
                 modalImg.setAttribute('src', 'images/proyects/quizzApp_2.png');
                 modalTitle.innerText = "QuizzApp";
-                modalDescription.innerHTML = `A trivia game where users can choose between different topics and prove their knowledge and try 
-                to get the first place.<br/><br/> It was made in Android Studio using Java as programming language and MySQL as the database to store and retrieve 
-                the information the applications needs to function.`;
+                modalDescription.innerHTML = `A trivia game where users can test their knowledge on certain topics and try to get among the 
+                first places on the scoreboard. Each player can create a profile and configure their game as they wish without fear of losing 
+                their information.<br/><br/> The application was made in Android Studio using Java as main language and the library "Romm"
+                to create a database that makes the information persistent.`;
                 modalTools.forEach((tool) => {
                     tool.innerText = tools[counter];
                     counter++;
@@ -45,11 +57,11 @@ openModal.forEach((element) => {
 
             case 'cartesianbtn':
                 tools = ["ARDUINO", "SOLIDWORKS", "ELECTRONICS"];
-                modalImg.setAttribute('src', 'images/proyects/SolidWorks_3.jpg');
-                modalTitle.innerText = "Cartesian Robot";
-                modalDescription.innerHTML = `A robot consisting of a cubic structure, with three arms, and each one can move along a two-dimensional
-                 plane. This arms have a right angle between them simulating the coordinate axes of a three-dimensional plain. <br/><br/>
-                 These kind of robots are used in industry to perform activities such as material handling, and cutting processes`;
+                modalImg.setAttribute('src', 'images/proyects/Clientes3.png');
+                modalTitle.innerText = "Customer Manager";
+                modalDescription.innerHTML = `This is an application to manage the total balance of a customer list. It contains a form to validate 
+                and record the information of each client and send them to a database. The application allows the user to add and delete customers, 
+                as well as edit their information at any time.<br/> <br/>The program for managing the information on the server was carried out in Java, the database used was MySQL and finally HTML, CSS and Bootstrap were used for the design of the page.`;
                 modalTools.forEach((tool) => {
                     tool.innerText = tools[counter];
                     tool.style.width = "26%"
@@ -64,7 +76,7 @@ openModal.forEach((element) => {
                 tools = ["ANDROID", "FIREBASE", "JAVA"];
                 modalImg.setAttribute('src', 'images/proyects/ToDo-List_5.jpg');
                 modalTitle.innerText = "To-Do List";
-                modalDescription.innerHTML = `A To-Do application where users can schedule different activities during the week and can share
+                modalDescription.innerHTML = `A To-Do list where users can schedule different activities during the week and can share
                 these activities with friends and other people. The app is capable of creating a list and customize them with colors, icons, 
                 and names. <br/><br/> The application connects to Firebase to get the information and the authentication.`;
                 modalTools.forEach((tool) => {
@@ -79,10 +91,12 @@ openModal.forEach((element) => {
 
             case 'petbtn':
                 tools = ["HTML", "CSS", "RESPONSIVE"];
-                modalImg.setAttribute('src', 'images/proyects/petGallery2.png');
-                modalTitle.innerText = "Pet-Gallery";
-                modalDescription.innerHTML = `A gallery that contains different pet photos for people to adopt.An HTML web page that applies 
-                CSS styles to organized and give presentation to the page. <br/><br/> The project only covers the design and structure of the page.`;
+                modalImg.setAttribute('src', 'images/proyects/BudgetList3.png');
+                modalTitle.innerText = "Budget App";
+                modalDescription.innerHTML = `In this web app, the user can create his budget by adding his income and expenses for the month. 
+                He can add the quantity and a description to each one of these and if necessary he can also remove them. At the end, the program 
+                shows to the user the total amount of money that the user has. <br/> </br>The project was realized to apply the basic concepts of 
+                JavaScript to create a functional application.`;
                 modalTools.forEach((tool) => {
                     tool.innerText = tools[counter];
                     tool.style.width = "26%"
@@ -95,9 +109,11 @@ openModal.forEach((element) => {
 
             case 'clockbtn':
                 tools = ["HTML", "CSS", "JAVASCRIPT"];
-                modalImg.setAttribute('src', 'images/proyects/realTimeClock2.png');
-                modalTitle.innerText = "Digital Clock";
-                modalDescription.innerHTML = `A real time analog and digital clock`;
+                modalImg.setAttribute('src', 'images/proyects/WeatherApp2.png');
+                modalTitle.innerText = "Weather App";
+                modalDescription.innerHTML = `An application to observe the weather information of almost any city in the world. It implements 
+                the OpenWeatherMap API to receive the data of the city and its weather, as well as the Google Places API so  the users can 
+                receive suggestions when writing the name of the city and autocompletes the input field if desired.`;
                 modalTools.forEach((tool) => {
                     tool.innerText = tools[counter];
                     tool.style.width = "26%"
@@ -112,9 +128,10 @@ openModal.forEach((element) => {
                 tools = ["PYTHON", "ELECTRONIC", "PSOC"];
                 modalImg.setAttribute('src', 'images/proyects/banda2.jpeg');
                 modalTitle.innerText = "Sorting System";
-                modalDescription.innerHTML = `A prototype of a sorting system that implements computer vision to classify the products by
-                reading the QR codes attach to them. <br/><br/> The camera detect the QR code and proceed to read it, and if the code is correct, the 
-                python program sends the signals to the microcontroller to start the operation`;
+                modalDescription.innerHTML = `A prototype of a classification system that implements computer vision to classify products by 
+                reading the QR codes attached to them. The process begins when the camera detects the QR code and proceeds to read it, if the 
+                code is correct and the product meets the appropriate specifications, the program sends the signals to the microcontroller so 
+                that the belt moves the product to its corresponding place.`;
                 modalTools.forEach((tool) => {
                     tool.innerText = tools[counter];
                     tool.style.width = "26%"
@@ -147,6 +164,11 @@ window.addEventListener("click", function (e) {
 });
 
 window.addEventListener("scroll", function (e) {
-    navbar.classList.toggle("sticky", window.scrollY > 250);
+    if (window.scrollY > window.innerHeight) {
+        navbar.classList.toggle("sticky", window.scrollY > innerHeight);
+    } else if (window.scrollY < window.innerHeight) {
+        navbar.classList.toggle("sticky", window.scrollY > innerHeight - 90);
+    }
 });
+
 
